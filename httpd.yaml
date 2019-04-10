@@ -1,0 +1,17 @@
+# this file is to istall multiple package at a time
+---
+- hosts: web
+  become: yes
+  tasks:
+  - name: instaling the belwo packages
+    apt:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - git
+      - openjdk-8-jdk
+      - awscli
+  - name: "Ensure the service is stopped"
+    service:
+      name: apache2
+      state: started
