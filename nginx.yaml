@@ -1,0 +1,33 @@
+# simple palybook to install nginx.
+# copy module example
+# file and directory creation
+# note: At the time of using Copy module: we removing content at destination folder and append your content
+--- 
+- hosts: web
+  become: yes
+  tasks:
+  - name: install nginx
+    apt: 
+      name: nginx
+      state: present
+  - name: start nginx service
+    service:
+      name: nginx
+      state: started
+  - name: example copying index.html file
+    copy:
+      src: index.html
+      dest: /home/index.html
+  # touch a file, using symbolic modes to set the permissions (equivalent to 0644)
+  - file:
+      path: /home/ansible/baladir
+      state: touch
+      mode: "u=rw,g=r,o=r"
+  - name: ansible create directory example
+    file:
+      path: /home/ansible/myplaybooks
+      state: directory
+  - file:
+      path: /home/ansible/myplaybooks/bala12.txt
+      state: touch
+      mode: "u=rw,g=r,o=r"
