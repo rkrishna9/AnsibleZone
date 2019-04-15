@@ -1,0 +1,8 @@
+# the below links are useful to learn and at the time of working with new scenerios
+
+
+https://github.com/ansible/ansible-examples/tree/master/tomcat-standalone/roles/tomcat
+
+https://medium.com/@wbassler23/securing-secrets-for-your-iac-using-jenkins-terraform-and-ansible-vault-7009e0a7eb32
+
+https://github.com/cloudposse/terraform-null-ansible
